@@ -334,7 +334,7 @@ def create_send_message(self,
                             correlation_id=None,
                             base_encode=None,
                             status_callback=None,
-                            async=False)
+                            _async=False)
 ```
 
 #### Parameters

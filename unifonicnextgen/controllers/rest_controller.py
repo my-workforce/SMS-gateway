@@ -128,7 +128,7 @@ class RestController(BaseController):
                             correlation_id=None,
                             base_encode=None,
                             status_callback=None,
-                            async=False):
+                            _async=False):
         """Does a POST request to /rest/SMS/messages.
 
         Unifonic Send API allows you to send  text messages to users around
@@ -152,7 +152,7 @@ class RestController(BaseController):
             status_callback (string, optional): Filter messages report
                 according to a specific message status, "Sent", "Queued",
                 "Rejected" or "Failed
-            async (bool, optional): It specifies that the request will be
+            _async (bool, optional): It specifies that the request will be
                 executed asynchronously as soon as it is sent
 
         Returns:
@@ -185,7 +185,7 @@ class RestController(BaseController):
             'CorrelationID': correlation_id,
             'baseEncode': base_encode,
             'statusCallback': status_callback,
-            'async': async
+            'async': _async
         }
         _query_builder = APIHelper.append_url_with_query_parameters(_query_builder,
             _query_parameters, Configuration.array_serialization)
